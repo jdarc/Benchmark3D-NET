@@ -2,6 +2,15 @@
 .NET version of the benchmark to compare and contrast the relatively performance 
 of various different languages/runtimes.
 
+## Requirements
+- .NET Core 3.1
+- Avalonia UI framework
+
+## Running the benchmark
+```
+dotnet run -c Release
+```
+
 ## Rules
 I have followed these simple rules when developing these benchmarks:
 
