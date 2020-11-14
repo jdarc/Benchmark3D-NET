@@ -6,6 +6,7 @@ namespace Benchmark.Engine
 {
     internal sealed class GameLoop
     {
+        public static readonly double Frequency = Stopwatch.Frequency;
         private readonly Stopwatch _watch = new Stopwatch();
         private readonly DispatcherTimer _timer;
         private long _tock;
@@ -17,7 +18,7 @@ namespace Benchmark.Engine
             {
                 var tick = _tock;
                 _tock = _watch.ElapsedTicks;
-                game.Update((_tock - tick) / 1000000000.0);
+                game.Update((_tock - tick) / Frequency);
                 game.Render();
             };
         }

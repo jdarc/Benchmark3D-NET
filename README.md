@@ -1,6 +1,6 @@
 # .NET Benchmark
 .NET version of the benchmark to compare and contrast the relatively performance 
-of various different languages/runtimes.
+of various different languages/runtimes. The test model consists of *149,837* vertices and *299,707* triangles.
 
 ## Requirements
 - .NET Core 3.1

@@ -46,7 +46,7 @@ namespace Benchmark.Engine
                 else if (line.StartsWith(FaceDirective, StringComparison.OrdinalIgnoreCase))
                 {
                     var chunks = line.Substring(FaceDirective.Length).Split(' ');
-                    var indices = chunks.Select(s => s.Split('/').Select(s => int.Parse(s) - 1).ToArray()).ToArray();
+                    var indices = chunks.Select(s => s.Split('/').Select(n => int.Parse(n) - 1).ToArray()).ToArray();
                     var a = indices[0]; var va = _vertices[a[0]]; var ta = _uvs[a[1]];
                     var b = indices[1]; var vb = _vertices[b[0]]; var tb = _uvs[b[1]];
                     var c = indices[2]; var vc = _vertices[c[0]]; var tc = _uvs[c[1]];
