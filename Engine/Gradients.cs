@@ -1,6 +1,6 @@
 namespace Benchmark.Engine
 {
-    public readonly struct Gradients
+    readonly struct Gradients
     {
         public readonly float _1OverZdX;
         public readonly float _1OverZdY;

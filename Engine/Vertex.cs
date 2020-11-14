@@ -2,7 +2,7 @@ using System.Numerics;
 
 namespace Benchmark.Engine
 {
-    public struct Vertex
+    internal struct Vertex
     {
         public Vector4 Position;
         public Vector2 TexCoord;

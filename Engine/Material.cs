@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace Benchmark.Engine
 {
-    public sealed class Material
+    internal sealed class Material
     {
         private readonly int _mask;
         private readonly int _width;

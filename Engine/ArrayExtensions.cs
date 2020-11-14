@@ -5,7 +5,7 @@ using System.Runtime.Intrinsics.X86;
 
 namespace Benchmark.Engine
 {
-    public static class ArrayExtensions
+    internal static class ArrayExtensions
     {
         public static void Fill<T>(this T[] array, T value) where T : unmanaged
         {

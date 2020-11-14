@@ -1,6 +1,6 @@
 namespace Benchmark.Engine
 {
-    public interface IGame
+    internal interface IGame
     {
         void Update(double seconds);
         void Render();

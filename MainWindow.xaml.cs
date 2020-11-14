@@ -6,7 +6,7 @@ using Benchmark.Engine;
 
 namespace Benchmark
 {
-    public sealed class MainWindow : Window, IGame
+    internal sealed class MainWindow : Window, IGame
     {
         private readonly Viewport _viewport;
 

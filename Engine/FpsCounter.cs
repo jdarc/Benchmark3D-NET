@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace Benchmark.Engine
 {
-    public sealed class FpsCounter
+    internal sealed class FpsCounter
     {
-        private readonly double[] _samples = new double[256];
+        private readonly double[] _samples = Enumerable.Range(0, 256).Select(x => 16000000.0).ToArray();
         private int _index;
 
         public void Add(double sample) => _samples[255 & _index++] = sample;

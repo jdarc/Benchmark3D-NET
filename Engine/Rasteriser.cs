@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Benchmark.Engine
 {
-    public sealed class Rasteriser
+    internal sealed class Rasteriser
     {
         private readonly int[] _colorBuffer;
         private readonly float[] _depthBuffer;

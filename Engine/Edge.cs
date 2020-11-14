@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace Benchmark.Engine
 {
-    public struct Edge
+    internal struct Edge
     {
         public int Y;
         public readonly int Height;

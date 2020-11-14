@@ -10,8 +10,10 @@ using Benchmark.Engine;
 
 namespace Benchmark
 {
-    public sealed class Viewport : UserControl
+    internal sealed class Viewport : UserControl
     {
+        private static readonly string Version = System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription;
+        private static readonly Bitmap Logo = new Bitmap("Content/Logo.png");
         private static readonly System.Drawing.Size RenderSize = new System.Drawing.Size(1440, 1800);
         private static readonly Brush Yellow = new SolidColorBrush(Colors.Yellow);
         private static readonly Typeface Typeface = new Typeface("Space Mono", 15, FontStyle.Normal, FontWeight.Medium);
@@ -43,14 +45,11 @@ namespace Benchmark
             FormattedText.Text = $"Frames/Second: {_fpsCounter.Average().ToString("F2", CultureInfo.InvariantCulture)}";
             context.DrawText(Yellow, new Point(16, 16), FormattedText);
 
-            FormattedText.Text = Info.Version;
+            FormattedText.Text = Version;
             context.DrawText(Yellow, new Point(Bounds.Width - FormattedText.Bounds.Width - 16, 16), FormattedText);
-
-            FormattedText.Text = Info.Attribution;
-            context.DrawText(Yellow, new Point(16, Bounds.Height - FormattedText.Bounds.Height - 16), FormattedText);
-
-            var destRect = new Rect(new Point(Bounds.Width - Info.Logo.Size.Width - 8, Bounds.Height - Info.Logo.Size.Height - 8), Info.Logo.Size);
-            context.DrawImage(Info.Logo, 1, new Rect(Info.Logo.Size), destRect);
+            
+            var destRect = new Rect(new Point(Bounds.Width - Logo.Size.Width - 8, Bounds.Height - Logo.Size.Height - 8), Logo.Size);
+            context.DrawImage(Logo, 1, new Rect(Logo.Size), destRect);
         }
     }
 }

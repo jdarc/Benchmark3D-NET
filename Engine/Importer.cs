@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Benchmark.Engine
 {
-    public sealed class Importer
+    internal sealed class Importer
     {
         private const string NewMaterialDirective = "newmtl ";
         private const string UseMaterialDirective = "usemtl ";

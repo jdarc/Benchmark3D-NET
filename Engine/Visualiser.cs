@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace Benchmark.Engine
 {
-    public sealed class Visualiser
+    internal sealed class Visualiser
     {
         private const int Opaque = 0xFF << 24;
 

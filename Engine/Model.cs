@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Benchmark.Engine
 {
-    public sealed class Model
+    internal sealed class Model
     {
         private readonly IDictionary<Material, float[]> _parts;
 
