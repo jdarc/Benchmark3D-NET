@@ -3,7 +3,7 @@
 of various different languages/runtimes. The test model consists of *149,837* vertices and *299,707* triangles.
 
 ## Requirements
-- .NET Core 3.1
+- .NET Core 5.0
 - Avalonia UI framework
 
 ## Running the benchmark
