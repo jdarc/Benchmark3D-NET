@@ -5,6 +5,7 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 using Avalonia.Visuals.Media.Imaging;
 using Benchmark.Engine;
 
@@ -14,7 +15,7 @@ namespace Benchmark
     {
         private static readonly string Version = System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription;
         private static readonly Bitmap Logo = new Bitmap("Content/Logo.png");
-        private static readonly System.Drawing.Size RenderSize = new System.Drawing.Size(1440, 1800);
+        private static readonly PixelSize RenderSize = new PixelSize(1440, 1800);
         private static readonly Brush Yellow = new SolidColorBrush(Colors.Yellow);
         private static readonly Typeface Typeface = new Typeface("Space Mono", 15, FontStyle.Normal, FontWeight.Medium);
         private static readonly FormattedText FormattedText = new FormattedText {Typeface = Typeface};
@@ -22,7 +23,7 @@ namespace Benchmark
         private readonly Stopwatch _watch = new Stopwatch();
         private readonly FpsCounter _fpsCounter = new FpsCounter();
         private readonly Visualiser _visualiser = new Visualiser(RenderSize.Width, RenderSize.Height);
-        private readonly WriteableBitmap _bitmap = new WriteableBitmap(new PixelSize(RenderSize.Width, RenderSize.Height), new Vector(96, 96));
+        private readonly WriteableBitmap _bitmap = new WriteableBitmap(RenderSize, new Vector(96, 96), PixelFormat.Bgra8888);
 
         public Viewport() => AvaloniaXamlLoader.Load(this);
 
