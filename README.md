@@ -1,8 +1,13 @@
 # .NET Benchmark
 .NET version of the benchmark to compare and contrast the performance of different 
 languages and their runtime environment. The test model consists of *149,837* vertices 
-and *299,707* triangles. The  frames are rendered at a resolution of 1440x1800 
-and resampled into a window that is approximately 90% the height of the screen.
+and *299,707* triangles. 
+
+The frames are rendered at a resolution of 1440x1800 and resampled into a window that 
+is approximately 90% the height of the screen.
+
+Frames per second calculation only considers the time taken to perform rasterization 
+and does not include the time taken by the display system to draw the resultant image. 
 
 ## Requirements
 - .NET Core 5.0
