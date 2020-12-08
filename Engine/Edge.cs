@@ -53,7 +53,7 @@ namespace Benchmark.Engine
             }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public void Step()
         {
             Y++;
@@ -64,7 +64,7 @@ namespace Benchmark.Engine
             TvOverZ += _tvOverZStep;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public void StepXOnly() => X += _xStep;
     }
 }

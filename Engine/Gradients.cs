@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace Benchmark.Engine
 {
     readonly struct Gradients
@@ -11,6 +13,7 @@ namespace Benchmark.Engine
         public readonly float TvOverZdX;
         public readonly float TvOverZdY;
 
+        [MethodImpl(MethodImplOptions.AggressiveOptimization)]
         public Gradients(ref Vertex a, ref Vertex c, ref Vertex b)
         {
             var pac = a.Position - c.Position;

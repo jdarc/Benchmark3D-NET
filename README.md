@@ -11,7 +11,7 @@ and does not include the time taken by the display system to draw the resultant 
 
 ## Requirements
 - .NET Core 5.0
-- Avalonia UI framework
+- [libgdiplus](https://www.mono-project.com/docs/gui/libgdiplus/) when running on a Mac
 
 ## Running the benchmark
 ```

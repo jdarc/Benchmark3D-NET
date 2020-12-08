@@ -33,6 +33,7 @@ namespace Benchmark.Engine
             _depthBuffer.Fill(depth);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveOptimization)]
         public void Draw(Material material, float[] buffer)
         {
             var transform = World * View * Projection;
@@ -124,6 +125,7 @@ namespace Benchmark.Engine
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveOptimization)]
         private void ScanConvert(Material material, ref Gradients gradients, ref Edge left, ref Edge right, int total)
         {
             for (var y = 0; y < total; ++y)
@@ -146,7 +148,7 @@ namespace Benchmark.Engine
             }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         private void Rasterise(Material mat, Gradients grad, int x1, int x2, float z, float _1OverZ, float tuOverZ, float tvOverZ)
         {
             for (var mem = x1; mem < x2; ++mem)
@@ -164,7 +166,7 @@ namespace Benchmark.Engine
             }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         private static bool IsBackFacing(ref Vertex a, ref Vertex b, ref Vertex c)
         {
             var bvw = 1 / b.Position.W;
