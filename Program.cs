@@ -13,7 +13,7 @@ namespace Benchmark
             var app = new Application("org.zynaps.benchmark", GLib.ApplicationFlags.None);
             app.Register(GLib.Cancellable.Current);
 
-            var win = new MainWindow();
+            var win = new MainWindow {WindowPosition = WindowPosition.Center};
             app.AddWindow(win);
 
             win.ShowAll();
