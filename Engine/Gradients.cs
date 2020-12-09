@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 
 namespace Benchmark.Engine
 {
-    readonly struct Gradients
+    internal readonly struct Gradients
     {
         public readonly float _1OverZdX;
         public readonly float _1OverZdY;

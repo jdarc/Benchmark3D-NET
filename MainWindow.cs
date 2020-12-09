@@ -5,8 +5,8 @@ namespace Benchmark
 {
     internal sealed class MainWindow : Window
     {
-        private static readonly double Resolution = 1000.0 / Stopwatch.Frequency;
-        
+        private static readonly double TimerResolution = 1.0 / Stopwatch.Frequency;
+
         public MainWindow() : base(WindowType.Toplevel)
         {
             Title = ".NET Core Benchmark";
@@ -20,13 +20,15 @@ namespace Benchmark
 
             var viewport = new Viewport();
             Add(viewport);
-            
-            var tock = 0.0;
+
+            var tock = 0L;
+            var watch = new Stopwatch();
+            watch.Start();
             AddTickCallback((_, frameClock) =>
             {
                 var tick = tock;
-                tock = frameClock.FrameTime;
-                viewport.Update((tock - tick) * Resolution);
+                tock = watch.ElapsedTicks;
+                viewport.Update((tock - tick) * TimerResolution);
                 viewport.Render();
                 return true;
             });
